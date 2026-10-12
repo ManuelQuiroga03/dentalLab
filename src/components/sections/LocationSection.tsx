@@ -2,12 +2,13 @@ import React from 'react';
 import { Clock, MapPin, Phone, MessageCircle } from 'lucide-react';
 import { clinicConfig } from '../../config/clinic';
 import { openWhatsApp } from '../../config/analytics';
+import { InteractiveMapCard } from '../ui/InteractiveMapCard';
 
 export const LocationSection: React.FC = () => {
   const handleLocationWhatsApp = () => {
     openWhatsApp(
       'location_section',
-      `¡Hola Dra.! Quisiera consultar disponibilidad de cita y la ubicación exacta de su consultorio en Zacatlán.`
+      `¡Hola Dra. Mary! Quisiera consultar disponibilidad de cita y la ubicación de su consultorio en Zacatlán.`
     );
   };
 
@@ -43,7 +44,7 @@ export const LocationSection: React.FC = () => {
                 </div>
                 <div>
                   <h5 className="font-semibold text-slate-900 text-sm">Ubicación del Consultorio</h5>
-                  <p className="text-xs text-slate-500">{clinicConfig.address.zone} ({clinicConfig.address.city}, {clinicConfig.address.state}) - {clinicConfig.address.reference}</p>
+                  <p className="text-xs text-slate-500">{clinicConfig.address.fullAddress}</p>
                 </div>
               </div>
 
@@ -70,21 +71,9 @@ export const LocationSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Tarjeta Visual de Mapa / Ubicación Interactiva */}
-          <div className="bg-slate-100 rounded-3xl p-6 border border-slate-200 shadow-inner h-96 flex flex-col items-center justify-center text-center">
-            <MapPin className="w-12 h-12 text-[#5F9AD1] mb-3 animate-bounce" />
-            <h4 className="text-lg font-medium text-slate-800">Ubicación en Zacatlán, Puebla</h4>
-            <p className="text-xs text-slate-500 max-w-sm mt-1">
-              Aquí vinculamos el mapa interactivo de Google Maps de su nuevo consultorio para que sus pacientes abran la ruta con un toque.
-            </p>
-            <a 
-              href={clinicConfig.address.mapQueryUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="mt-4 px-4 py-1.5 bg-white rounded-full text-xs font-semibold text-[#3D8CD5] shadow-sm hover:shadow hover:bg-slate-50 transition-all"
-            >
-              Abrir en Google Maps &rarr;
-            </a>
+          {/* Tarjeta Visual de Mapa Interactivo con Widget idéntico a la referencia */}
+          <div>
+            <InteractiveMapCard />
           </div>
         </div>
       </div>
