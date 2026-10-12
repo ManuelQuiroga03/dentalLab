@@ -21,7 +21,7 @@ export interface ClinicConfig {
 export const clinicConfig: ClinicConfig = {
   name: "Coccinella",
   tagline: "Dental Studio",
-  doctorName: "Dra. Odontología Integral & Estética",
+  doctorName: "Dra. Mary — Odontología Integral & Estética",
   whatsappPhone: "5215500000000",
   whatsappWelcomeMessage: "¡Hola Dra.! Me gustaría agendar una valoración en Coccinella Dental Studio en Zacatlán.",
   address: {
