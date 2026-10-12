@@ -6,6 +6,7 @@ export interface ClinicConfig {
   whatsappWelcomeMessage: string;
   address: {
     city: string;
+    state: string;
     zone: string;
     reference: string;
     mapQueryUrl: string;
@@ -22,17 +23,18 @@ export const clinicConfig: ClinicConfig = {
   tagline: "Dental Studio",
   doctorName: "Dra. Odontología Integral & Estética",
   whatsappPhone: "5215500000000",
-  whatsappWelcomeMessage: "¡Hola Dra.! Me gustaría agendar una valoración en Coccinella Dental Studio.",
+  whatsappWelcomeMessage: "¡Hola Dra.! Me gustaría agendar una valoración en Coccinella Dental Studio en Zacatlán.",
   address: {
-    city: "Ciudad de México",
-    zone: "Zona Céntrica / Accesible",
-    reference: "Consultorio nuevo con estacionamiento cercano",
-    mapQueryUrl: "https://maps.google.com/?q=Consultorio+Dental",
+    city: "Zacatlán",
+    state: "Puebla",
+    zone: "Zona Centro / Accesible",
+    reference: "Consultorio nuevo con instalaciones modernas",
+    mapQueryUrl: "https://maps.google.com/?q=Dentista+Zacatlan+Puebla",
   },
   schedule: {
     weekdays: "Lunes a Viernes: 10:00 am - 7:00 pm",
     saturday: "Sábados: 9:00 am - 2:00 pm",
-    sunday: "Domingos: Previa cita de urgencia",
+    sunday: "Previa cita de urgencia",
   },
 };
 

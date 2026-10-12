@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { HeroSection } from './components/sections/HeroSection';
 import { AboutSection } from './components/sections/AboutSection';
 import { TreatmentsSection } from './components/sections/TreatmentsSection';
@@ -15,6 +16,8 @@ export const App: React.FC = () => {
       <HygieneSection />
       <LocationSection />
       <Footer />
+      {/* Vercel Analytics Tracker */}
+      <Analytics />
     </main>
   );
 };

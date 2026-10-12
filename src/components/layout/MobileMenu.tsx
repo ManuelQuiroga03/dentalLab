@@ -1,6 +1,7 @@
 import React from 'react';
 import { PillButton } from '../ui/PillButton';
-import { navLinks, getWhatsAppUrl } from '../../config/clinic';
+import { navLinks } from '../../config/clinic';
+import { openWhatsApp } from '../../config/analytics';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -20,7 +21,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
     if (onScheduleClick) {
       onScheduleClick();
     } else {
-      window.open(getWhatsAppUrl(), '_blank');
+      openWhatsApp('mobile_menu');
     }
   };
 

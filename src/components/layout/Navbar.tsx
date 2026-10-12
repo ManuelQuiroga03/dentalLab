@@ -2,7 +2,8 @@ import React from 'react';
 import { Menu, X } from 'lucide-react';
 import { Logo } from '../ui/Logo';
 import { PillButton } from '../ui/PillButton';
-import { navLinks, getWhatsAppUrl } from '../../config/clinic';
+import { navLinks } from '../../config/clinic';
+import { openWhatsApp } from '../../config/analytics';
 
 interface NavbarProps {
   onScheduleClick?: () => void;
@@ -19,7 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     if (onScheduleClick) {
       onScheduleClick();
     } else {
-      window.open(getWhatsAppUrl(), '_blank');
+      openWhatsApp('navbar_desktop');
     }
   };
 
